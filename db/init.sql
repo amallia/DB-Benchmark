@@ -45,6 +45,10 @@ SET default_tablespace = '';
 
 SET default_with_oids = false;
 
+create database bench owner postgres;
+	
+\connect bench
+
 --
 -- TOC entry 173 (class 1259 OID 16386)
 -- Name: emails; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 

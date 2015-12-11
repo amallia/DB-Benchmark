@@ -47,7 +47,7 @@ public class InsertManualCommitBench extends Bench {
 			connection.commit();
 			connection.close();
 			log.info(
-					"N. of Insert executed: {} Total Excution Time: {} us, Mean per query: {} us, Max: {} us, Min: {} us",
+					"N. of Insert with deferred commit executed: {} Total Excution Time: {} us, Mean per query: {} us, Max: {} us, Min: {} us",
 					total.getRight(), total.getLeft(),
 					total.getLeft() / total.getRight(), max, min);
 		} catch (Exception e) {

@@ -8,7 +8,9 @@ Three different benchmarks have been realized:
 - Insert with deferred commit
 - Select with a WHERE condition on a primary key
 
-Results are presented as output of the command line. For each benchmark is printed number of query executed, total execution time and mean, maximum, minimum execution time per single query.
+When execution starts whole benchmarks are attempted, 1000 queries per benchmarks.
+
+Results are presented as output of the command line. For each benchmark is printed number of query executed, total execution time (in milliseconds) and mean, maximum, minimum execution time per single query.
 
 ### Prerequisites
 
@@ -21,10 +23,15 @@ docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgre
 N.B. In case you prefer to use an existing database you can use the init.sql file present inside db folder.
 
 ### Configuration
-The only parameters to configure are inside db.properties file. You need to specify DB ip, port, name, user and password 
+The only parameters to configure are inside db.properties file. You need to specify DB ip, port, user and password. If use docker leave default user 'postgres'.
 
 ### Packaging and Run 
 ```
 mvn clean install
 java -jar target/db-benchmark.jar
 ```
+
+Tests
+-------
+Automatic tests are executed on query builder and prepared statement creation.
+We don't provide full tests since this is an example project.
